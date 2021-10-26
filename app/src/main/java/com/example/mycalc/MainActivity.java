@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        /*** This is Main.activity ***/
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         showResult = findViewById(R.id.show_result);

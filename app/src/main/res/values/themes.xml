@@ -13,4 +13,8 @@
         <item name="android:statusBarColor">@color/black</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="HistoryActivity" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
+    </style>
 </resources>

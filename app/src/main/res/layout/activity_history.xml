@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bright_blue"
+    tools:context=".HistoryActivity">
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/dark_blue">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_menu"
+            android:layout_gravity="start"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_history"
+            android:layout_gravity="center"/>
+
+        <ImageView
+            android:paddingEnd="20dp"
+            android:layout_gravity="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_search"/>
+    </Toolbar>
+
+    <TextView
+        android:id="@+id/policies"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/text_view_margin_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Policies"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size"
+        android:backgroundTint="@color/black"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_policy"
+        app:layout_constraintTop_toBottomOf="@+id/policies"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        app:cornerRadius="@dimen/btn_radius"
+        android:backgroundTint="@color/white"
+        android:text="Policy"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textAlignment="textStart"
+        android:drawableEnd="@drawable/ic_arrow_right"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_product_category"
+        app:layout_constraintTop_toBottomOf="@+id/btn_policy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        app:cornerRadius="@dimen/btn_radius"
+        android:backgroundTint="@color/white"
+        android:text="Product Category"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textAlignment="textStart"
+        android:drawableEnd="@drawable/ic_arrow_right"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_origin_country"
+        app:layout_constraintTop_toBottomOf="@+id/btn_product_category"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        app:cornerRadius="@dimen/btn_radius"
+        android:backgroundTint="@color/white"
+        android:text="Origin Country"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textAlignment="textStart"
+        android:drawableEnd="@drawable/ic_arrow_right"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_brand"
+        app:layout_constraintTop_toBottomOf="@+id/btn_origin_country"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        app:cornerRadius="@dimen/btn_radius"
+        android:backgroundTint="@color/white"
+        android:text="Brand"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textAlignment="textStart"
+        android:drawableEnd="@drawable/ic_arrow_right"/>
+
+    <TextView
+        android:id="@+id/curr_policies"
+        app:layout_constraintTop_toBottomOf="@+id/btn_brand"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current Policies"
+        android:textSize="@dimen/text_size"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/text_view_margin_top"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_curr_as_csv"
+        app:layout_constraintTop_toBottomOf="@+id/curr_policies"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        app:cornerRadius="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/red"
+        android:text="Finish ALL Activity"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

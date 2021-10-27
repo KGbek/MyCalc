@@ -4,9 +4,11 @@ import static java.lang.Integer.parseInt;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView showResult;
     private Integer firstNumber, secondNumber;
     private String operation;
+    private Button historyBtn;
     private Boolean isFirstNumClick = false;
 
     @Override
@@ -23,16 +26,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         showResult = findViewById(R.id.show_result);
+        historyBtn = findViewById(R.id.history_btn);
+        historyBtn.setVisibility(View.INVISIBLE);
     }
 
     public void onNumberClick(View view) {
         switch (view.getId()){
             case(R.id.btn_clear):
+                historyBtn.setVisibility(View.INVISIBLE);
                 showResult.setText("0");
                 firstNumber = null;
                 secondNumber = null;
                 break;
             case(R.id.btn_one):
+                historyBtn.setVisibility(View.INVISIBLE);
                 if(showResult.getText().toString().equals("0")){
                     showResult.setText("1");
                 } else {
@@ -44,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 isFirstNumClick = true;
                 break;
             case(R.id.btn_two):
+                historyBtn.setVisibility(View.INVISIBLE);
                 if (showResult.getText().toString().equals("0")){
                     showResult.setText("2");
                 } else {
@@ -55,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 isFirstNumClick = true;
                 break;
             case(R.id.btn_three):
+                historyBtn.setVisibility(View.INVISIBLE);
                 if (showResult.getText().toString().equals("0")){
                     showResult.setText("3");
                 } else {
@@ -66,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 isFirstNumClick = true;
                 break;
             case(R.id.btn_four):
+                historyBtn.setVisibility(View.INVISIBLE);
                 if(showResult.getText().toString().equals("0")){
                     showResult.setText("4");
                 } else {
@@ -77,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 isFirstNumClick = true;
                 break;
             case(R.id.btn_five):
+                historyBtn.setVisibility(View.INVISIBLE);
                 if(showResult.getText().toString().equals("0")){
                     showResult.setText("5");
                 } else {
@@ -88,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 isFirstNumClick = true;
                 break;
             case(R.id.btn_six):
+                historyBtn.setVisibility(View.INVISIBLE);
                 if(showResult.getText().toString().equals("0")){
                     showResult.setText("6");
                 } else {
@@ -99,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
                 isFirstNumClick = true;
                 break;
             case(R.id.btn_seven):
+                historyBtn.setVisibility(View.INVISIBLE);
                 if(showResult.getText().toString().equals("0")){
                     showResult.setText("7");
                 } else {
@@ -110,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
                 isFirstNumClick = true;
                 break;
             case(R.id.btn_eight):
+                historyBtn.setVisibility(View.INVISIBLE);
                 if(showResult.getText().toString().equals("0")){
                     showResult.setText("8");
                 } else {
@@ -121,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
                 isFirstNumClick = true;
                 break;
             case(R.id.btn_nine):
+                historyBtn.setVisibility(View.INVISIBLE);
                 if(showResult.getText().toString().equals("0")){
                     showResult.setText("9");
                 } else {
@@ -132,6 +147,7 @@ public class MainActivity extends AppCompatActivity {
                 isFirstNumClick = true;
                 break;
             case(R.id.btn_zero):
+                historyBtn.setVisibility(View.INVISIBLE);
                 if(showResult.getText().toString().equals("0")){
                     showResult.setText("0");
                 } else {
@@ -142,33 +158,38 @@ public class MainActivity extends AppCompatActivity {
                 }
                 isFirstNumClick = true;
                 break;
-        }
+            }
     }
 
 
     public void expressionPlus(View view){
         switch (view.getId()){
             case R.id.btn_plus:
+                historyBtn.setVisibility(View.INVISIBLE);
                 firstNumber = parseInt(showResult.getText().toString());
                 operation = "+";
                 showResult.setText(firstNumber + operation);
                 break;
             case R.id.btn_minus:
+                historyBtn.setVisibility(View.INVISIBLE);
                 firstNumber = parseInt(showResult.getText().toString());
                 operation = "-";
                 showResult.setText(firstNumber + operation);
                 break;
             case R.id.btn_multiply:
+                historyBtn.setVisibility(View.INVISIBLE);
                 firstNumber = parseInt(showResult.getText().toString());
                 operation = "*";
                 showResult.setText(firstNumber + operation);
                 break;
             case R.id.divide:
+                historyBtn.setVisibility(View.INVISIBLE);
                 firstNumber = parseInt(showResult.getText().toString());
                 operation = "/";
                 showResult.setText(firstNumber + operation);
                 break;
             case R.id.btn_equal:
+                historyBtn.setVisibility(View.VISIBLE);
                 if (operation.equals("+")){
                     String text = showResult.getText().toString();
                     text = text.replace(firstNumber + operation, "");
@@ -209,4 +230,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void publishHistory(View view) {
+        String note = showResult.getText().toString();
+        Intent myIntent = new Intent(MainActivity.this, HistoryActivity.class);
+        myIntent.putExtra("textKey", note);
+        startActivity(myIntent);
+    }
 }

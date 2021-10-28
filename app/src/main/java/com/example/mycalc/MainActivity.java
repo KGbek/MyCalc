@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 if(isFirstNumClick){
                     showResult.setText("1");
                 }
-                isFirstNumClick = true;
+                isFirstNumClick = false;
                 break;
             case(R.id.btn_two):
                 historyBtn.setVisibility(View.INVISIBLE);
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 if (isFirstNumClick) {
                     showResult.setText("2");
                 }
-                isFirstNumClick = true;
+                isFirstNumClick = false;
                 break;
             case(R.id.btn_three):
                 historyBtn.setVisibility(View.INVISIBLE);
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 if (isFirstNumClick){
                     showResult.setText("3");
                 }
-                isFirstNumClick = true;
+                isFirstNumClick = false;
                 break;
             case(R.id.btn_four):
                 historyBtn.setVisibility(View.INVISIBLE);
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 if (isFirstNumClick){
                     showResult.setText("4");
                 }
-                isFirstNumClick = true;
+                isFirstNumClick = false;
                 break;
             case(R.id.btn_five):
                 historyBtn.setVisibility(View.INVISIBLE);
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 if (isFirstNumClick){
                     showResult.setText("5");
                 }
-                isFirstNumClick = true;
+                isFirstNumClick = false;
                 break;
             case(R.id.btn_six):
                 historyBtn.setVisibility(View.INVISIBLE);
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
                 if(isFirstNumClick){
                     showResult.setText("6");
                 }
-                isFirstNumClick = true;
+                isFirstNumClick = false;
                 break;
             case(R.id.btn_seven):
                 historyBtn.setVisibility(View.INVISIBLE);
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
                 if(isFirstNumClick){
                     showResult.setText("7");
                 }
-                isFirstNumClick = true;
+                isFirstNumClick = false;
                 break;
             case(R.id.btn_eight):
                 historyBtn.setVisibility(View.INVISIBLE);
@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
                 if(isFirstNumClick){
                     showResult.setText("8");
                 }
-                isFirstNumClick = true;
+                isFirstNumClick = false;
                 break;
             case(R.id.btn_nine):
                 historyBtn.setVisibility(View.INVISIBLE);
@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
                 if(isFirstNumClick){
                     showResult.setText("9");
                 }
-                isFirstNumClick = true;
+                isFirstNumClick = false;
                 break;
             case(R.id.btn_zero):
                 historyBtn.setVisibility(View.INVISIBLE);
@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
                 if(isFirstNumClick){
                     showResult.setText("0");
                 }
-                isFirstNumClick = true;
+                isFirstNumClick = false;
                 break;
             }
     }
@@ -227,6 +227,7 @@ public class MainActivity extends AppCompatActivity {
                     secondNumber = null;
                     break;
                 }
+
         }
     }
 
